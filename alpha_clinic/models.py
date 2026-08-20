@@ -83,3 +83,37 @@ class Prescription(models.Model):
 
     def __str__(self):
         return f"{self.id}"
+
+class Medicine(models.Model):
+    medicine_name = models.CharField(max_length=255)
+    strength=models.CharField(max_length=255)
+    price=models.DecimalField(max_digits=6, decimal_places=2)
+    stock=models.DecimalField(max_digits=6,decimal_places=1)
+
+    def __str__(self):
+        return f"Medicine {self.medicine_name}"
+
+class MedicalRecord(models.Model):
+    diagnosis = models.CharField(max_length=255)
+    allergies = models.CharField(max_length=255,default="None")
+    medical_history=models.CharField(max_length=255,default="None")
+    notes = models.TextField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Medical Record {self.diagnosis}"
+
+class Bill(models.Model):
+
+    discount=models.DecimalField(max_digits=6, decimal_places=2)
+    tax=models.DecimalField(max_digits=6, decimal_places=2)
+    grand_total=models.DecimalField(max_digits=6, decimal_places=2)
+    Bill_payment_choices = [
+        ("P","PAID"),
+        ("U","UNPAID"),
+    ]
+    status = models.CharField(max_length=255, choices=Bill_payment_choices)
+    payment_date = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Bill {self.id}"

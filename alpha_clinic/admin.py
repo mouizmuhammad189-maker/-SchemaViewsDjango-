@@ -1,5 +1,6 @@
 from django.contrib import admin
-from alpha_clinic.models import Doctor, Patient, Appointment, LabTest, Prescription
+from alpha_clinic.models import Doctor, Patient, Appointment, LabTest, Prescription, Medicine, MedicalRecord,Bill
+
 
 # Register Doctor Model
 class DoctorAdmin(admin.ModelAdmin):
@@ -39,3 +40,19 @@ class PrescriptionAdmin(admin.ModelAdmin):
     search_fields = ('notes',)
 
 admin.site.register(Prescription, PrescriptionAdmin)
+
+class MedicineAdmin(admin.ModelAdmin):
+    list_display = ('medicine_name', 'strength', 'price', 'stock',)
+    search_fields = ('medicine_name',)
+admin.site.register(Medicine, MedicineAdmin)
+
+
+class MedicalRecordAdmin(admin.ModelAdmin):
+    list_display = ('diagnosis', 'allergies', 'medical_history', 'notes', 'created_at',)
+    search_fields = ('diagnosis',)
+admin.site.register(MedicalRecord, MedicalRecordAdmin)
+
+
+class BillAdmin(admin.ModelAdmin):
+    list_display = ("id","discount","tax","grand_total","status","payment_date",)
+admin.site.register(Bill, BillAdmin)
