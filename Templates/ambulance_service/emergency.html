@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Emergency Requests</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f7fb;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .header {
+            background: white;
+            padding: 25px 30px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .header h1 {
+            color: #1f2937;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            color: #6b7280;
+        }
+
+        .table-container {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background: #dc2626;
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #e5e7eb;
+            color: #374151;
+        }
+
+        tr:hover {
+            background: #f8fafc;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        /* Priority */
+
+        .low {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .medium {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .high {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        /* Request Status */
+
+        .pending {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .dispatch {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .completed {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .ambulance {
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        .empty {
+            text-align: center;
+            padding: 30px;
+            color: #6b7280;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>🚨 Emergency Requests</h1>
+        <p>List of all emergency requests</p>
+    </div>
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Patient Name</th>
+                    <th>Priority</th>
+                    <th>Request Time</th>
+                    <th>Status</th>
+                    <th>Ambulance</th>
+                    <th>Driver</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                {% for request in emergency %}
+
+                <tr>
+
+                    <td>
+                        {{ forloop.counter }}
+                    </td>
+
+                    <td>
+                        <strong>{{ request.patient_name }}</strong>
+                    </td>
+
+                    <td>
+
+                        {% if request.priority_status == "A" %}
+                            <span class="badge low">
+                                Low
+                            </span>
+
+                        {% elif request.priority_status == "B" %}
+                            <span class="badge medium">
+                                Medium
+                            </span>
+
+                        {% elif request.priority_status == "C" %}
+                            <span class="badge high">
+                                High
+                            </span>
+                        {% endif %}
+
+                    </td>
+
+                    <td>
+                        {{ request.request_time|date:"d M Y, h:i A" }}
+                    </td>
+
+                    <td>
+
+                        {% if request.request_status == "A" %}
+                            <span class="badge pending">
+                                Pending
+                            </span>
+
+                        {% elif request.request_status == "B" %}
+                            <span class="badge dispatch">
+                                Dispatched
+                            </span>
+
+                        {% elif request.request_status == "C" %}
+                            <span class="badge completed">
+                                Completed
+                            </span>
+                        {% endif %}
+
+                    </td>
+
+                    <td class="ambulance">
+                        🚑 {{ request.ambulance_id.vehicle_number }}
+                    </td>
+
+                    <td>
+                        {{ request.ambulance_id.driver_name }}
+                    </td>
+
+                </tr>
+
+                {% empty %}
+
+                <tr>
+                    <td colspan="7" class="empty">
+                        No emergency requests found.
+                    </td>
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+</body>
+</html>
+
