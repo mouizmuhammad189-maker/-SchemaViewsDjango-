@@ -1,0 +1,8 @@
+this information i am getting from sir database schema date 21 August
+ok now in this we discuss how we handle routing on each app and add html for better appearance to do this
+1.first create seperate folder of urls.py in each apps and then import the main urls file in it
+2.then in main url file import include and in url pattern add app.url path
+3.now in app views.py import the models then create the views
+4.now in app urls.py py file add url patterns that tells on which url which page can render
+5.Now for MVT create templates of each app for seperate understanding the app designs that easy for system in the main file of project out in the app folder
+6.add each table filename.html

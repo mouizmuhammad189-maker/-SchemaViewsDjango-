@@ -1,0 +1,65 @@
+Customers
+customer_id PK
+full name
+cnic
+phone
+email
+address
+driving license no
+created at
+
+
+damage
+damage id PK
+rental id FK
+damage date
+damage type
+description
+repair cost
+customer charged
+status
+notes
+
+
+maintenance
+maintenance_id
+vehicle_id FK
+maintenance_date
+maintenance_type
+description
+cost
+service_provider
+next_service_date
+status
+notes
+
+
+rentals
+rentals id PK
+customer id FK
+vehicle id FK
+rental date
+expected return date
+actual return date
+daily rate
+security deposit
+total amount
+payment amount
+payment_methode
+payment_status
+status
+notes
+
+
+Vehicles
+vehicle_id PK
+registration_no
+vehicle_type
+brand
+model
+manufacturing year
+color
+daily_rate
+mileage
+status
+purchase_date

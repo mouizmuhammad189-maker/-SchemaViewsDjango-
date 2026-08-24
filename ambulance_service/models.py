@@ -15,7 +15,7 @@ class Ambulance(models.Model):
     ambulance_status = models.CharField(max_length=255, choices=vehicle_status_choices)
 
     def __str__(self):
-        return f"Vehicle {self.vehicle_number}"
+        return f"Vehicle {self.vehicle_number,self.ambulance_status}"
 
 class EmergencyRequest(models.Model):
     patient_name=models.CharField(max_length=255)
@@ -25,11 +25,14 @@ class EmergencyRequest(models.Model):
         ("C","High"),
     ]
     priority_status = models.CharField(max_length=255, choices=priority_choices)
-    request_time = models.DateTimeField(auto_now_add=True)
+    request_time = models.DateTimeField()
     status_choices=[
         ("A","Pending"),
         ("B","Dispatch"),
         ("C","Completed"),
     ]
-    status_status = models.CharField(max_length=255, choices=status_choices)
+    request_status = models.CharField(max_length=255, choices=status_choices)
     ambulance_id=models.ForeignKey(Ambulance, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"Vehicle  {self.patient_name,self.priority_status,self.request_status}"
