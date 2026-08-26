@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Doctors — Directory</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F5F7F8;
+    --card:#FFFFFF;
+    --ink:#1B2B34;
+    --muted:#5B6B73;
+    --border:#E1E6E8;
+    --teal:#0F6F6B;
+    --teal-tint:#E7F2F1;
+    --amber:#E8974A;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    padding:48px 24px;
+  }
+  .wrap{max-width:1000px;margin:0 auto;}
+  .eyebrow{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:13px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--teal);
+    font-weight:600;
+    margin-bottom:6px;
+  }
+  h1{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:32px;
+    font-weight:700;
+    margin:0 0 4px;
+    letter-spacing:-0.01em;
+  }
+  .sub{color:var(--muted);font-size:14.5px;margin-bottom:28px;}
+  .card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 1px 3px rgba(20,30,35,.04), 0 10px 30px -18px rgba(20,30,35,.12);
+  }
+  table{width:100%;border-collapse:collapse;font-size:14.5px;}
+  thead th{
+    text-align:left;
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:600;
+    font-size:12.5px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--teal);
+    background:var(--teal-tint);
+    padding:14px 18px;
+    border-bottom:1px solid var(--border);
+    position:sticky;top:0;
+  }
+  tbody td{
+    padding:14px 18px;
+    border-bottom:1px solid var(--border);
+    color:var(--ink);
+    vertical-align:middle;
+  }
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:hover{background:#FAFBFC;}
+  .doc-name{font-weight:600;}
+  .doc-name .badge{
+    display:inline-block;
+    margin-left:8px;
+    font-size:11px;
+    font-weight:600;
+    color:var(--teal);
+    background:var(--teal-tint);
+    padding:2px 8px;
+    border-radius:999px;
+    vertical-align:middle;
+  }
+  .spec{color:var(--muted);}
+  .fee{font-family:'Space Grotesk',sans-serif;font-weight:600;color:var(--ink);}
+  .fee::before{content:"$";color:var(--amber);}
+  .muted-cell{color:var(--muted);}
+  .footnote{margin-top:14px;font-size:12.5px;color:var(--muted);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">Alpha Clinic — Staff Directory</div>
+  <h1>Doctors</h1>
+  <div class="sub">Consulting physicians, specializations, and fees on file.</div>
+
+  <div class="card">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Specialization</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Consultation Fee</th>
+          <th>Joined</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="doc-name">Dr Sana Malik <span class="badge">Senior</span></td>
+          <td class="spec">Cardiology</td>
+          <td class="muted-cell">sana.malik@alphaclinic.com</td>
+          <td>+92 300 1234567</td>
+          <td class="fee">120.00</td>
+          <td class="muted-cell">12 Jan 2023</td>
+        </tr>
+        <tr>
+          <td class="doc-name">Dr Ahmed Raza</td>
+          <td class="spec">Orthopedics</td>
+          <td class="muted-cell">ahmed.raza@alphaclinic.com</td>
+          <td>+92 301 9988776</td>
+          <td class="fee">95.00</td>
+          <td class="muted-cell">03 Mar 2023</td>
+        </tr>
+        <tr>
+          <td class="doc-name">Dr Zainab Farooq <span class="badge">Senior</span></td>
+          <td class="spec">Pediatrics</td>
+          <td class="muted-cell">zainab.farooq@alphaclinic.com</td>
+          <td>+92 302 5566778</td>
+          <td class="fee">80.00</td>
+          <td class="muted-cell">19 Jun 2023</td>
+        </tr>
+        <tr>
+          <td class="doc-name">Dr Bilal Sheikh</td>
+          <td class="spec">Dermatology</td>
+          <td class="muted-cell">—</td>
+          <td>+92 303 1122334</td>
+          <td class="fee">70.00</td>
+          <td class="muted-cell">27 Sep 2023</td>
+        </tr>
+        <tr>
+          <td class="doc-name">Dr Hina Aslam</td>
+          <td class="spec">General Medicine</td>
+          <td class="muted-cell">hina.aslam@alphaclinic.com</td>
+          <td>+92 304 4455667</td>
+          <td class="fee">60.00</td>
+          <td class="muted-cell">14 Nov 2023</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="footnote">Sample data for layout preview — replace with live queryset values.</div>
+</div>
+</body>
+</html>

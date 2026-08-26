@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Patients — Directory</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F5F7F8; --card:#FFFFFF; --ink:#1B2B34; --muted:#5B6B73; --border:#E1E6E8;
+    --teal:#0F6F6B; --teal-tint:#E7F2F1; --amber:#E8974A; --rose:#C4577A; --rose-tint:#FBEAF0;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;padding:48px 24px;}
+  .wrap{max-width:1100px;margin:0 auto;}
+  .eyebrow{font-family:'Space Grotesk',sans-serif;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);font-weight:600;margin-bottom:6px;}
+  h1{font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:700;margin:0 0 4px;letter-spacing:-0.01em;}
+  .sub{color:var(--muted);font-size:14.5px;margin-bottom:28px;}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:0 1px 3px rgba(20,30,35,.04), 0 10px 30px -18px rgba(20,30,35,.12);}
+  table{width:100%;border-collapse:collapse;font-size:14.5px;}
+  thead th{text-align:left;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--teal);background:var(--teal-tint);padding:14px 18px;border-bottom:1px solid var(--border);}
+  tbody td{padding:14px 18px;border-bottom:1px solid var(--border);vertical-align:middle;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:hover{background:#FAFBFC;}
+  .p-name{font-weight:600;}
+  .muted-cell{color:var(--muted);}
+  .gender{
+    display:inline-block;font-size:11.5px;font-weight:600;padding:3px 9px;border-radius:999px;
+  }
+  .gender.M{color:var(--teal);background:var(--teal-tint);}
+  .gender.F{color:var(--rose);background:var(--rose-tint);}
+  .blood{
+    font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--amber);
+    background:#FDF1E5;padding:3px 10px;border-radius:8px;font-size:12.5px;letter-spacing:.02em;
+  }
+  .footnote{margin-top:14px;font-size:12.5px;color:var(--muted);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">Alpha Clinic — Registry</div>
+  <h1>Patients</h1>
+  <div class="sub">Registered patients and their core medical profile.</div>
+
+  <div class="card">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Gender</th>
+          <th>Date of Birth</th>
+          <th>Email</th>
+          <th>Address</th>
+          <th>Blood Group</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="p-name">Ayesha Khan</td>
+          <td><span class="gender F">Female</span></td>
+          <td class="muted-cell">14 May 1994</td>
+          <td class="muted-cell">ayesha.khan@example.com</td>
+          <td class="muted-cell">Model Town, Lahore</td>
+          <td><span class="blood">O+</span></td>
+        </tr>
+        <tr>
+          <td class="p-name">Usman Tariq</td>
+          <td><span class="gender M">Male</span></td>
+          <td class="muted-cell">02 Nov 1988</td>
+          <td class="muted-cell">usman.tariq@example.com</td>
+          <td class="muted-cell">DHA Phase 5, Lahore</td>
+          <td><span class="blood">B+</span></td>
+        </tr>
+        <tr>
+          <td class="p-name">Mahnoor Iqbal</td>
+          <td><span class="gender F">Female</span></td>
+          <td class="muted-cell">21 Jul 2001</td>
+          <td class="muted-cell">—</td>
+          <td class="muted-cell">Johar Town, Lahore</td>
+          <td><span class="blood">A-</span></td>
+        </tr>
+        <tr>
+          <td class="p-name">Fahad Nawaz</td>
+          <td><span class="gender M">Male</span></td>
+          <td class="muted-cell">09 Feb 1979</td>
+          <td class="muted-cell">fahad.nawaz@example.com</td>
+          <td class="muted-cell">Gulberg III, Lahore</td>
+          <td><span class="blood">AB+</span></td>
+        </tr>
+        <tr>
+          <td class="p-name">Sara Yousaf</td>
+          <td><span class="gender F">Female</span></td>
+          <td class="muted-cell">30 Sep 1996</td>
+          <td class="muted-cell">sara.yousaf@example.com</td>
+          <td class="muted-cell">Wapda Town, Lahore</td>
+          <td><span class="blood">O-</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="footnote">Sample data for layout preview — replace with live queryset values.</div>
+</div>
+</body>
+</html>

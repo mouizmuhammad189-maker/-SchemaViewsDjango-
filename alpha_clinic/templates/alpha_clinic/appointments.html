@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Appointments — Schedule</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F5F7F8; --card:#FFFFFF; --ink:#1B2B34; --muted:#5B6B73; --border:#E1E6E8;
+    --teal:#0F6F6B; --teal-tint:#E7F2F1; --amber:#E8974A;
+    --green:#3C8F6B; --green-tint:#E8F5EE;
+    --rose:#C4577A; --rose-tint:#FBEAF0;
+    --slate:#8A97A0; --slate-tint:#EEF1F2;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;padding:48px 24px;}
+  .wrap{max-width:1150px;margin:0 auto;}
+  .eyebrow{font-family:'Space Grotesk',sans-serif;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);font-weight:600;margin-bottom:6px;}
+  h1{font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:700;margin:0 0 4px;letter-spacing:-0.01em;}
+  .sub{color:var(--muted);font-size:14.5px;margin-bottom:28px;}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:0 1px 3px rgba(20,30,35,.04), 0 10px 30px -18px rgba(20,30,35,.12);}
+  table{width:100%;border-collapse:collapse;font-size:14.5px;}
+  thead th{text-align:left;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--teal);background:var(--teal-tint);padding:14px 18px;border-bottom:1px solid var(--border);}
+  tbody td{padding:14px 18px;border-bottom:1px solid var(--border);vertical-align:top;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:hover{background:#FAFBFC;}
+  .who{font-weight:600;}
+  .with-doc{color:var(--muted);font-weight:400;}
+  .muted-cell{color:var(--muted);}
+  .status{display:inline-block;font-size:11.5px;font-weight:600;padding:3px 10px;border-radius:999px;}
+  .status.Completed{color:var(--green);background:var(--green-tint);}
+  .status.Pending{color:var(--amber);background:#FDF1E5;}
+  .status.Cancelled{color:var(--rose);background:var(--rose-tint);}
+  .tests{display:flex;flex-wrap:wrap;gap:6px;}
+  .tests span{
+    font-size:11.5px;color:var(--teal);background:var(--teal-tint);
+    padding:3px 9px;border-radius:8px;white-space:nowrap;
+  }
+  .footnote{margin-top:14px;font-size:12.5px;color:var(--muted);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">Alpha Clinic — Front Desk</div>
+  <h1>Appointments</h1>
+  <div class="sub">Scheduled visits, status, and linked lab tests.</div>
+
+  <div class="card">
+    <table>
+      <thead>
+        <tr>
+          <th>Patient / Doctor</th>
+          <th>Date &amp; Time</th>
+          <th>Status</th>
+          <th>Lab Tests</th>
+          <th>Remarks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="who">Ayesha Khan</span><br><span class="with-doc">with Dr Sana Malik</span></td>
+          <td class="muted-cell">02 Sep 2026, 10:30 AM</td>
+          <td><span class="status Completed">Completed</span></td>
+          <td class="tests"><span>CBC</span><span>Lipid Profile</span></td>
+          <td class="muted-cell">Follow-up in 3 months.</td>
+        </tr>
+        <tr>
+          <td><span class="who">Usman Tariq</span><br><span class="with-doc">with Dr Ahmed Raza</span></td>
+          <td class="muted-cell">05 Sep 2026, 02:00 PM</td>
+          <td><span class="status Pending">Pending</span></td>
+          <td class="tests"><span>—</span></td>
+          <td class="muted-cell">Knee pain, first visit.</td>
+        </tr>
+        <tr>
+          <td><span class="who">Mahnoor Iqbal</span><br><span class="with-doc">with Dr Zainab Farooq</span></td>
+          <td class="muted-cell">06 Sep 2026, 11:15 AM</td>
+          <td><span class="status Cancelled">Cancelled</span></td>
+          <td class="tests"><span>—</span></td>
+          <td class="muted-cell">Rescheduled by patient.</td>
+        </tr>
+        <tr>
+          <td><span class="who">Fahad Nawaz</span><br><span class="with-doc">with Dr Bilal Sheikh</span></td>
+          <td class="muted-cell">08 Sep 2026, 09:00 AM</td>
+          <td><span class="status Completed">Completed</span></td>
+          <td class="tests"><span>Urinalysis</span></td>
+          <td class="muted-cell">Prescribed topical treatment.</td>
+        </tr>
+        <tr>
+          <td><span class="who">Sara Yousaf</span><br><span class="with-doc">with Dr Hina Aslam</span></td>
+          <td class="muted-cell">10 Sep 2026, 04:45 PM</td>
+          <td><span class="status Pending">Pending</span></td>
+          <td class="tests"><span>Thyroid Panel</span><span>Blood Glucose</span></td>
+          <td class="muted-cell">—</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="footnote">Sample data for layout preview — replace with live queryset values.</div>
+</div>
+</body>
+</html>
